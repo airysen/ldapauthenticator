@@ -319,7 +319,7 @@ class LDAPAuthenticator(Authenticator):
         auto_bind = (
             self.use_ssl and ldap3.AUTO_BIND_TLS_BEFORE_BIND or ldap3.AUTO_BIND_NO_TLS
         )
-        print ( 'server ', server, ' user ', user, ' password ', password )
+        print ( 'server ', server, ' user ', userdn, ' password ', password )
         conn = ldap3.Connection(
             server, user=userdn, password=password, auto_bind=auto_bind
         )
