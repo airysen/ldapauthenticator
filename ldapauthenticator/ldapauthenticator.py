@@ -13,10 +13,11 @@ from traitlets import List
 from traitlets import Unicode
 from traitlets import Union
 
-from ldap3.utils.log import set_library_log_detail_level, get_detail_level_name, set_library_log_hide_sensitive_data, EXTENDED
+#logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
+logging.basicConfig(filename='/tmp/ldap.log', level=logging.DEBUG)
 
+from ldap3.utils.log import set_library_log_detail_level, get_detail_level_name, set_library_log_hide_sensitive_data, EXTENDED
 set_library_log_detail_level(EXTENDED)
-logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
 class LDAPAuthenticator(Authenticator):
     server_address = Unicode(
