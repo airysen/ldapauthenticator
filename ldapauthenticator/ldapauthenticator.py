@@ -2,6 +2,8 @@ import re
 
 import ldap3
 import logging
+import sys
+
 from jupyterhub.auth import Authenticator
 from ldap3.utils.conv import escape_filter_chars
 from tornado import gen
